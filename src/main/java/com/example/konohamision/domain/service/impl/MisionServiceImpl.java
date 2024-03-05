@@ -31,7 +31,7 @@ public class MisionServiceImpl implements MisionService{
     }
 
     @Override
-    public MisionEntity saveHabilidad(MisionEntity misionEntity) {
+    public MisionEntity saveMision(MisionEntity misionEntity) {
         return misionRepository.save(misionEntity);
     }
 
@@ -41,7 +41,7 @@ public class MisionServiceImpl implements MisionService{
     }
 
     @Override
-    public MisionEntity updateHabilidad(Long id, MisionEntity misionEntity) {
+    public MisionEntity updateMision(Long id, MisionEntity misionEntity) {
         Optional<MisionEntity> oMision = misionRepository.findById(id);
 
         if(oMision.isPresent()){

@@ -14,12 +14,15 @@ import jakarta.persistence.Table;
 
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.List;
 import java.util.Objects;
 
 
 @Entity
 @Table(name = "ninja")
+@JsonIgnoreProperties({"misiones","habilidades"})
 public class NinjaEntity {
     
     @Id
@@ -42,10 +45,9 @@ public class NinjaEntity {
     )
     private Set<HabilidadEntity> habilidades;
 
-    @OneToMany(mappedBy = "ninja",cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "ninja", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<MisionNinjaEntity> misiones;
 
-    
 
     public NinjaEntity() {
     }

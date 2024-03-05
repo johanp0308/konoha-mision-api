@@ -19,6 +19,7 @@ public class MisionNinjaEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long registroId;
+    
     private Date fechaInicio;
     private Date fechaFin;
 
@@ -130,8 +131,8 @@ public class MisionNinjaEntity {
             " registroId='" + getRegistroId() + "'" +
             ", fechaInicio='" + getFechaInicio() + "'" +
             ", fechaFin='" + getFechaFin() + "'" +
-            ", ninja='" + getNinja() + "'" +
-            ", mision='" + getMision() + "'" +
+            ", ninja='" + getNinja().getNinjaId() + "'" +
+            ", mision='" + getMision().getMisionId() + "'" +
             "}";
     }
 

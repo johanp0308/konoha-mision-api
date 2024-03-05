@@ -47,7 +47,6 @@ public class HabilidadServiceImpl implements HabilidadService{
     public HabilidadEntity updateHabilidadEntity(Long id, HabilidadEntity habilidadEntity) {
         Optional<HabilidadEntity> oHabilidad = habilidadRepository.findById(id);
 
-
         if(oHabilidad.isPresent()){
             HabilidadEntity habilidad = oHabilidad.get();
             habilidad.setDescripcionHabilidad(habilidadEntity.getDescripcionHabilidad());

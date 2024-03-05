@@ -1,5 +1,6 @@
 INSERT INTO `konoha_mision_db`.`ninja` (`aldea`, `nombre_ninja`, `rango_ninja`) VALUES ('Hoja', 'Pachon', 'Senin');
 INSERT INTO `konoha_mision_db`.`ninja` (`aldea`, `nombre_ninja`, `rango_ninja`) VALUES ('Campus', 'Juan', 'Hokage');
+INSERT INTO `konoha_mision_db`.`ninja` (`aldea`, `nombre_ninja`, `rango_ninja`) VALUES ('Lol', 'Kevin', 'Master');
 
 INSERT INTO `konoha_mision_db`.`habilidad` (`descripcion_habilidad`, `nombre_habilidad`) VALUES ('Machetazo Limpio', 'Machete Jutsu');
 INSERT INTO `konoha_mision_db`.`habilidad` (`descripcion_habilidad`, `nombre_habilidad`) VALUES ('Espiral de Chakra', 'RasenFiltro');

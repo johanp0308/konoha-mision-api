@@ -46,12 +46,12 @@ public class MisionController {
 
     @PostMapping("/")
     public MisionEntity postMethodName(@RequestBody MisionEntity mision) {
-        return misionService.saveHabilidad(mision);
+        return misionService.saveMision(mision);
     }
     
     @PutMapping("/{id}")
     public MisionEntity putMethodName(@PathVariable String id, @RequestBody MisionEntity mision) {
-        return misionService.updateHabilidad(Long.valueOf(id), mision);
+        return misionService.updateMision(Long.valueOf(id), mision);
     }
 
     @DeleteMapping("/{id}")

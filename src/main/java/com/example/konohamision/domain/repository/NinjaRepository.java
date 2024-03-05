@@ -6,7 +6,10 @@ import org.springframework.data.jpa.repository.Query;
 import com.example.konohamision.persistence.entity.NinjaEntity;
 
 public interface NinjaRepository extends JpaRepository<NinjaEntity,Long>{
-    
-    // @Query("SELECT * FROM ")
-    // NinjaEntity findByNombreARango(String nombre, String rango);
+ 
+    /*
+    * In this method I consult the ninjas with a Mission
+    */
+    // @Query("SELECT n.* FROM ninja n, mision_ninja mn WHERE mn.ninja_id = n.ninja_id;")
+    // NinjaEntity findAllNinjaWMision();
 }
