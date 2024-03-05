@@ -19,29 +19,28 @@ public class MisionNinjaEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long registroId;
-
+    private Date fechaInicio;
+    private Date fechaFin;
 
     @ManyToOne()
     @JoinColumn(name = "ninja_id")
-    private NinjaEntity ninjaId;
+    private NinjaEntity ninja;
 
     @ManyToOne()
     @JoinColumn(name = "mision_id")
-    private MisionEntity misionId;
+    private MisionEntity mision;
 
-    private Date fechaInicio;
-    private Date fechaFin;
 
 
     public MisionNinjaEntity() {
     }
 
-    public MisionNinjaEntity(Long registroId, NinjaEntity ninjaId, MisionEntity misionId, Date fechaInicio, Date fechaFin) {
+    public MisionNinjaEntity(Long registroId, Date fechaInicio, Date fechaFin, NinjaEntity ninja, MisionEntity mision) {
         this.registroId = registroId;
-        this.ninjaId = ninjaId;
-        this.misionId = misionId;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
+        this.ninja = ninja;
+        this.mision = mision;
     }
 
     public Long getRegistroId() {
@@ -50,22 +49,6 @@ public class MisionNinjaEntity {
 
     public void setRegistroId(Long registroId) {
         this.registroId = registroId;
-    }
-
-    public NinjaEntity getNinjaId() {
-        return this.ninjaId;
-    }
-
-    public void setNinjaId(NinjaEntity ninjaId) {
-        this.ninjaId = ninjaId;
-    }
-
-    public MisionEntity getMisionId() {
-        return this.misionId;
-    }
-
-    public void setMisionId(MisionEntity misionId) {
-        this.misionId = misionId;
     }
 
     public Date getFechaInicio() {
@@ -84,18 +67,24 @@ public class MisionNinjaEntity {
         this.fechaFin = fechaFin;
     }
 
+    public NinjaEntity getNinja() {
+        return this.ninja;
+    }
+
+    public void setNinja(NinjaEntity ninja) {
+        this.ninja = ninja;
+    }
+
+    public MisionEntity getMision() {
+        return this.mision;
+    }
+
+    public void setMision(MisionEntity mision) {
+        this.mision = mision;
+    }
+
     public MisionNinjaEntity registroId(Long registroId) {
         setRegistroId(registroId);
-        return this;
-    }
-
-    public MisionNinjaEntity ninjaId(NinjaEntity ninjaId) {
-        setNinjaId(ninjaId);
-        return this;
-    }
-
-    public MisionNinjaEntity misionId(MisionEntity misionId) {
-        setMisionId(misionId);
         return this;
     }
 
@@ -109,6 +98,16 @@ public class MisionNinjaEntity {
         return this;
     }
 
+    public MisionNinjaEntity ninja(NinjaEntity ninja) {
+        setNinja(ninja);
+        return this;
+    }
+
+    public MisionNinjaEntity mision(MisionEntity mision) {
+        setMision(mision);
+        return this;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == this)
@@ -117,23 +116,23 @@ public class MisionNinjaEntity {
             return false;
         }
         MisionNinjaEntity misionNinjaEntity = (MisionNinjaEntity) o;
-        return Objects.equals(registroId, misionNinjaEntity.registroId) && Objects.equals(ninjaId, misionNinjaEntity.ninjaId) && Objects.equals(misionId, misionNinjaEntity.misionId) && Objects.equals(fechaInicio, misionNinjaEntity.fechaInicio) && Objects.equals(fechaFin, misionNinjaEntity.fechaFin);
+        return Objects.equals(registroId, misionNinjaEntity.registroId) && Objects.equals(fechaInicio, misionNinjaEntity.fechaInicio) && Objects.equals(fechaFin, misionNinjaEntity.fechaFin) && Objects.equals(ninja, misionNinjaEntity.ninja) && Objects.equals(mision, misionNinjaEntity.mision);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(registroId, ninjaId, misionId, fechaInicio, fechaFin);
+        return Objects.hash(registroId, fechaInicio, fechaFin, ninja, mision);
     }
 
     @Override
     public String toString() {
         return "{" +
             " registroId='" + getRegistroId() + "'" +
-            ", ninjaId='" + getNinjaId() + "'" +
-            ", misionId='" + getMisionId() + "'" +
             ", fechaInicio='" + getFechaInicio() + "'" +
             ", fechaFin='" + getFechaFin() + "'" +
+            ", ninja='" + getNinja() + "'" +
+            ", mision='" + getMision() + "'" +
             "}";
     }
-    
+
 }

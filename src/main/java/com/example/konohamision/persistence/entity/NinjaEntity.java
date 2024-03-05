@@ -6,6 +6,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
@@ -29,7 +31,15 @@ public class NinjaEntity {
     private String rangoNinja;
     private String aldea;
 
-    @ManyToMany(mappedBy = "ninja")
+    @ManyToMany(cascade = {
+        CascadeType.PERSIST,
+        CascadeType.MERGE
+    })
+    @JoinTable(
+        name = "ninja_habilidad",
+        joinColumns = {@JoinColumn(name="ninja_id")},
+        inverseJoinColumns = {@JoinColumn(name = "habilidad_id")}
+    )
     private Set<HabilidadEntity> habilidades;
 
     @OneToMany(mappedBy = "ninja",cascade = CascadeType.ALL, orphanRemoval = true)

@@ -24,7 +24,7 @@ public class HabilidadEntity {
     private String nombreHabilidad;
     private String descripcionHabilidad;
 
-    @ManyToMany(mappedBy = "habilidad")
+    @ManyToMany(mappedBy = "habilidades")
     private Set<NinjaEntity> ninjas;
     
 

@@ -28,7 +28,7 @@ public class MisionEntity {
     private double recompensaMision;
 
     @OneToMany(mappedBy = "mision", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<MisionNinjaEntity> misiones;
+    private List<MisionNinjaEntity> ninjas;
 
 
     public MisionEntity() {

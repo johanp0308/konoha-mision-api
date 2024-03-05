@@ -8,5 +8,6 @@ public interface HabilidadService {
     List<HabilidadEntity> getAll();
     HabilidadEntity getById(Long id);
     HabilidadEntity saveHabilidad(HabilidadEntity habilidadEntity);
+    HabilidadEntity updateHabilidadEntity(Long id, HabilidadEntity habilidadEntity);
     void deleteById(Long id);
 }
